@@ -1,25 +1,33 @@
 package imaginamos.test.sart.com.testimg.ui.activities.main;
 
-import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.support.annotation.NonNull;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.ViewModel;
 
+import java.util.List;
+
+import imaginamos.test.sart.com.testimg.data.db.models.Reddit;
 import imaginamos.test.sart.com.testimg.data.managers.DataManager;
 
 /**
  * Created by SergioAlejandro on 28/11/2017.
  */
 
-public class MainViewModel extends AndroidViewModel {
+public class MainViewModel extends ViewModel {
 
     private DataManager dataManager;
+    private LiveData<List<Reddit>> liveRedditsList;
 
-    public MainViewModel(@NonNull Application application) {
-        super(application);
+    public MainViewModel() {
         dataManager = DataManager.get();
+        initializeData();
     }
 
-    public void getReddit() {
-        dataManager.getRedditManager().getReddit();
+    private void initializeData() {
+        dataManager.getRedditManager().downloadAndSaveReddits();
+        liveRedditsList = dataManager.getRedditManager().getLiveReddits();
+    }
+
+    public LiveData<List<Reddit>> getLiveReddits() {
+        return liveRedditsList;
     }
 }

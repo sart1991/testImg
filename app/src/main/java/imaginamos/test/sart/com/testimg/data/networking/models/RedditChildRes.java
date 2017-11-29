@@ -7,13 +7,13 @@ import com.google.gson.annotations.SerializedName;
  * Created by SergioAlejandro on 28/11/2017.
  */
 
-public class RedditChild {
+public class RedditChildRes {
     @SerializedName("kind")
     @Expose
     private String kind;
     @SerializedName("data")
     @Expose
-    private RedditChildData data;
+    private RedditChildDataRes data;
 
     public String getKind() {
         return kind;
@@ -23,11 +23,11 @@ public class RedditChild {
         this.kind = kind;
     }
 
-    public RedditChildData getData() {
+    public RedditChildDataRes getData() {
         return data;
     }
 
-    public void setData(RedditChildData data) {
+    public void setData(RedditChildDataRes data) {
         this.data = data;
     }
 }

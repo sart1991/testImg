@@ -1,6 +1,6 @@
 package imaginamos.test.sart.com.testimg.data.networking.requests;
 
-import imaginamos.test.sart.com.testimg.data.networking.models.Reddit;
+import imaginamos.test.sart.com.testimg.data.networking.models.RedditRes;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,12 +40,12 @@ public class RequestService {
         return instance;
     }
 
-    public void getReddit(Callback<Reddit> redditCallback) {
-        Call<Reddit> call = redditClient.getReddit();
+    public void getReddit(Callback<RedditRes> redditCallback) {
+        Call<RedditRes> call = redditClient.getReddit();
         enqueueRedditRequest(call, redditCallback);
     }
 
-    private void enqueueRedditRequest(Call<Reddit> call, Callback<Reddit> redditCallback) {
+    private void enqueueRedditRequest(Call<RedditRes> call, Callback<RedditRes> redditCallback) {
         call.enqueue(redditCallback);
     }
 

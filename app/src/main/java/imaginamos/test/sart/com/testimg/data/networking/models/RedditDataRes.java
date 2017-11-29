@@ -9,7 +9,7 @@ import java.util.List;
  * Created by SergioAlejandro on 28/11/2017.
  */
 
-public class RedditData {
+public class RedditDataRes {
 
     @SerializedName("modhash")
     @Expose
@@ -19,7 +19,7 @@ public class RedditData {
     private String whitelistStatus;
     @SerializedName("children")
     @Expose
-    private List<RedditChild> children = null;
+    private List<RedditChildRes> children = null;
 
     public String getModhash() {
         return modhash;
@@ -37,11 +37,11 @@ public class RedditData {
         this.whitelistStatus = whitelistStatus;
     }
 
-    public List<RedditChild> getChildren() {
+    public List<RedditChildRes> getChildren() {
         return children;
     }
 
-    public void setChildren(List<RedditChild> children) {
+    public void setChildren(List<RedditChildRes> children) {
         this.children = children;
     }
 
