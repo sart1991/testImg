@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class ConverterUtilTest {
 
     @Test
-    public void testConvertRedditChildDataResIntoReddit_true() {
+    public void testConvertRedditChildDataResIntoReddit_positive() {
         String id = "1234";
         RedditChildDataRes redditChildDataRes = new RedditChildDataRes();
         redditChildDataRes.setId(id);
@@ -24,7 +24,7 @@ public class ConverterUtilTest {
     }
 
     @Test(expected = NullPointerException.class)
-    public void testConvertRedditChildDataResIntoReddit_false() {
+    public void testConvertRedditChildDataResIntoReddit_negative() {
         RedditChildDataRes redditChildDataRes = null;
         ConverterUtil.convert(redditChildDataRes);
     }
