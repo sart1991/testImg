@@ -52,7 +52,6 @@ public class DetailsActivity extends AppCompatActivity {
                 return;
             }
         }
-        //TODO: dialog saying reddit not found
     }
 
     private void bindViews() {
