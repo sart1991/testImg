@@ -44,8 +44,7 @@ public class MainActivity extends BaseActivity {
                     Log.i(TAG, "onChanged: observer reddits == null");
                     return;
                 }
-                for (Reddit r :
-                        reddits) {
+                for (Reddit r : reddits) {
                     Log.i(TAG, "onChanged: observer redditId " + r.getId());
                 }
             }

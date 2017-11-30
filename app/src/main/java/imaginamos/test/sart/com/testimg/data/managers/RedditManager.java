@@ -80,8 +80,7 @@ public class RedditManager {
         protected List<Reddit> doInBackground(RedditRes... paramsRedditRes) {
             RedditRes redditRes = paramsRedditRes[0];
             //List<Reddit> redditsList = new ArrayList<>();
-            for (RedditChildRes redditChildRes:
-                redditRes.getData().getChildren()) {
+            for (RedditChildRes redditChildRes : redditRes.getData().getChildren()) {
                 RedditChildDataRes redditChildDataRes = redditChildRes.getData();
                 Reddit reddit = convert(redditChildDataRes);
                 mAppDatabase.queryRedditsDB().addReddit(reddit);
