@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageView_cardReddit_icon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/textView_cardReddit_title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/textView_cardReddit_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Test Large Title"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginRight="16dp"
+                app:layout_constraintLeft_toRightOf="@id/imageView_cardReddit_icon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/textView_cardReddit_subtitle"
+                style="@style/LargeTitle"/>
+
+            <TextView
+                android:id="@+id/textView_cardReddit_subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Test Subtitle"
+                android:layout_marginRight="16dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                app:layout_constraintLeft_toLeftOf="@id/textView_cardReddit_title"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_cardReddit_title"
+                app:layout_constraintBottom_toTopOf="@+id/textView_cardReddit_topic"
+                style="@style/MediumText"/>
+
+            <TextView
+                android:id="@+id/textView_cardReddit_topic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Test Topic"
+                android:layout_marginRight="16dp"
+                app:layout_constraintLeft_toLeftOf="@id/textView_cardReddit_title"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_cardReddit_subtitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/SmallTitle"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

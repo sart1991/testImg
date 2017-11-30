@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">TestImg</string>
+    <string name="app_name">ImagiReddit</string>
 
     <!-- plain string -->
     <string name="_ok">OK</string>
 
     <!-- permissionsInternet rationale -->
     <string name="permissionsInternet_rationale_title">
-        Permisios de internet necesarios
+        Internet permissions needed
     </string>
     <string name="permissionsInternet_rationale_content">
-        El permiso de internet es indispensable para poder descargar la informacion de Reddit
+        The internet permission is needed to download the information from reddit
     </string>
     <string name="permissionsInternet_rationale_positiveButton">@string/_ok</string>
 </resources>
