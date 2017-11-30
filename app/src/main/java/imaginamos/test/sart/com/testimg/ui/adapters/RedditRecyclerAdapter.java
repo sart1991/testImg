@@ -55,7 +55,7 @@ public class RedditRecyclerAdapter extends
             holder.imgRedditIcon.setImageResource(R.mipmap.ic_launcher);
         } else {
             Picasso.with(mContext).load(reddit.getIconImg())
-                    .resize(64, 64).into(holder.imgRedditIcon);
+                    .fit().centerInside().into(holder.imgRedditIcon);
         }
 
         holder.txtRedditTitle.setText(title);
