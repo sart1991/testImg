@@ -2,6 +2,7 @@ package imaginamos.test.sart.com.testimg.ui.activities.main;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +14,8 @@ import java.util.List;
 import imaginamos.test.sart.com.testimg.R;
 import imaginamos.test.sart.com.testimg.data.db.models.Reddit;
 import imaginamos.test.sart.com.testimg.ui.activities.base.BaseActivity;
+import imaginamos.test.sart.com.testimg.ui.activities.details.DetailsActivity;
+import imaginamos.test.sart.com.testimg.ui.activities.details.RedditDetailsConstants;
 import imaginamos.test.sart.com.testimg.ui.adapters.RedditRecyclerAdapter;
 
 public class MainActivity extends BaseActivity implements RedditRecyclerAdapter.RedditCardDelegate {
@@ -27,6 +30,7 @@ public class MainActivity extends BaseActivity implements RedditRecyclerAdapter.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         setUp();
     }
 
@@ -37,7 +41,6 @@ public class MainActivity extends BaseActivity implements RedditRecyclerAdapter.
     }
 
     private void bindViews() {
-        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mRecyclerReddits = findViewById(R.id.recyclerView_mainActivity_reddits);
     }
 
@@ -64,6 +67,9 @@ public class MainActivity extends BaseActivity implements RedditRecyclerAdapter.
 
     @Override
     public void onClickCard(Reddit reddit) {
-
+        Intent intentRedditDetail = new Intent(this, DetailsActivity.class);
+        intentRedditDetail.putExtra(RedditDetailsConstants.INTENT_EXTRA_REDDIT_ID.getKey(),
+                                    reddit.getId());
+        startActivity(intentRedditDetail);
     }
 }

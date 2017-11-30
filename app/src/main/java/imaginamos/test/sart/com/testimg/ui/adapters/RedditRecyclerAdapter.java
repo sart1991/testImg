@@ -34,6 +34,7 @@ public class RedditRecyclerAdapter extends
 
     public void setRedditsList(List<Reddit> reddits) {
         mReddits = reddits;
+        notifyDataSetChanged();
     }
 
     @Override

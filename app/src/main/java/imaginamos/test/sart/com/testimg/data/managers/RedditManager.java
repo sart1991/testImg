@@ -74,6 +74,10 @@ public class RedditManager {
         return mAppDatabase.queryRedditsDB().getReddits();
     }
 
+    public LiveData<Reddit> getLiveReddit(String id) {
+        return mAppDatabase.queryRedditsDB().getRedditById(id);
+    }
+
     private class AsyncSaveReddits extends AsyncTask<RedditRes, Void, List<Reddit>> {
 
         @Override

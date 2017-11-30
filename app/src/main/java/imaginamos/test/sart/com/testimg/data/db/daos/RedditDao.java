@@ -23,7 +23,7 @@ public interface RedditDao {
     LiveData<List<Reddit>> getReddits();
 
     @Query("SELECT * FROM reddits WHERE id = :id")
-    LiveData<Reddit> getItemById(String id);
+    LiveData<Reddit> getRedditById(String id);
 
     @Insert(onConflict = REPLACE)
     void addReddit(Reddit reddit);
