@@ -68,6 +68,7 @@ public class DetailsActivity extends AppCompatActivity {
         viewModel.getReddit(redditId).observe(this, new Observer<Reddit>() {
             @Override
             public void onChanged(@Nullable final Reddit reddit) {
+                if (reddit == null) return;
                 Log.i(TAG, "onChanged: redditId" + reddit.getId());
                 if (!TextUtils.isEmpty(reddit.getBannerImg())) {
                     Picasso.with(getCurrentContext()).load(reddit.getBannerImg())
