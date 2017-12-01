@@ -26,7 +26,7 @@ public class DetailsActivity extends AppCompatActivity {
     private String redditId;
     private DetailsViewModel viewModel;
     private ImageView imgBanner;
-    private TextView txtTitle, txtDescription;
+    private TextView txtTitle;
     private WebView webView;
 
     @Override
@@ -57,7 +57,6 @@ public class DetailsActivity extends AppCompatActivity {
     private void bindViews() {
         imgBanner = findViewById(R.id.imageView_detailsActivity_banner);
         txtTitle = findViewById(R.id.textView_detailsActivity_title);
-        txtDescription = findViewById(R.id.textView_detailsActivity_description);
         webView = findViewById(R.id.webView_detailsActivity_description);
     }
 
@@ -78,7 +77,6 @@ public class DetailsActivity extends AppCompatActivity {
                 if (title == null) title = reddit.getTitle();
                 txtTitle.setText(title);
                 String description = Html.fromHtml(reddit.getDescriptionHtml()).toString();
-                txtDescription.setText(description);
                 webView.loadData(description, "text/html", "utf-8");
             }
         });
